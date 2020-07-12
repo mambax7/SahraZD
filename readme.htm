@@ -1,0 +1,293 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<title>GBook - README</title>
+<style>
+BODY, TD {
+color: black;
+font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 11px;
+}
+P {
+color : black;
+font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 11px;
+}
+A:HOVER {
+color : Red;
+text-decoration : none ! important;
+}
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h3><font color="#FF0000">GBook</font> <br>
+<font size="3">PHP guestbook script</font></h3>
+
+<p>PHP guestbook (GBook)<br>
+Version: 1.34 from 16th November 2005<br>
+Originally written on 9th July 2004 by Klemen Stirn (info AT phpjunkyard DOT com)<br>
+<a href="http://www.phpjunkyard.com">PHPJunkYard.com - Free PHP scripts</a><br>
+<a href="http://www.phpjunkyard.com/php-guestbook-script.php">PHP guestbook</a><br>
+<a href="http://developers.phpjunkyard.com/">Support and developers forum</a></p>
+
+<b>PLEASE NOTE:</b> I <font color="#FF0000">cannot</font> provide free installation
+support for this free script! Please use the above e-mail address to contact me
+ONLY about possible bug reports, suggestions or comments! Thank you!</p>
+
+<hr>
+
+<p><b>INDEX</b></p>
+
+<p><a href="#copy">Copyright notice and license</a><br>
+<a href="#desc">Description &amp; requirements</a><br>
+<a href="#upgrade">Upgrade from version 1.33</a><br>
+<a href="#install">Installation</a><br>
+<a href="#translate">Adding / Translating bad words list</a><br>
+<a href="#help">Troubleshooting and getting help</a><br>
+<a href="#other">Copyright removal, newsletter, rating this script and other</a></p>
+
+<hr>
+
+<p><a name="copy"></a><b>COPYRIGHT NOTICE</b></p>
+<p>Copyright 2004-2005 Klemen Stirn. All Rights Reserved.</p>
+<p>The GBook may be used and modified free of charge by anyone so long as
+this copyright notice and the comments above remain intact. By using this
+code you agree to indemnify Klemen Stirn from any liability
+that might arise from it's use.</p>
+<p>Selling the code for this program without prior written consent is
+expressly forbidden. In other words, please ask first before you try and
+make money off this program.</p>
+<p>Obtain permission before redistributing this software over the Internet or
+in any other medium. In all cases copyright and header must remain intact.
+This Copyright is in full effect in any country that has International
+Trade Agreements with the United States of America or with
+the European Union.</p>
+
+<p><b>Removing copyright notice (&quot;Powered by&quot; statement)</b><br>
+Removing any of the copyright notices without purchasing a license is <b>illegal</b>!
+To remove PHPJunkyard copyright notice you must purchase a license for this script.
+For more information on how to obtain a license please visit the site below:<br>
+<a href="http://www.phpjunkyard.com/copyright-removal.php"
+target="_blank">http://www.phpjunkyard.com/copyright-removal.php</a></p>
+
+<hr>
+
+<p><a name="desc"></a>DESCRIPTION</p>
+
+<p>PHP guestbook where you visitors can post comments about your website.</p>
+
+<hr>
+
+<p>Requirements</p>
+
+<ul>
+        <li>UNIX or Windows server (it *might* work on others too)</li>
+        <li>PHP4 support</li>
+        <li>FTP access and a FTP program</li>
+</ul>
+
+<hr>
+
+<p><a name="upgrade"></a><b>&gt;&gt; Upgrade from version 1.33</b></p>
+
+<p>To upgrade from version 1.33 to version 1.34 follow these steps:</p>
+
+<ol>
+<li>BACKUP your old Gbook</li>
+<li>Edit the new settings.php file (more info under &quot;Installation&quot;)
+as a new variable has been added</li>
+<li>Upload these files to your server (all in ASCII mode): gbook.php, settings.php</li>
+<li>Test everything. All your current posts should stay intact.</li>
+</ol>
+
+<hr>
+
+<p><a name="install"></a><b>&gt;&gt; Installation</b></p>
+
+<p>Open file settings.php in your favorite <b>PLAIN TEXT</b> editor (like Notepad or
+Wordpad on Windows systems, DO NOT use MS Word or similar editor) and set these variables:</p>
+
+<ul>
+<li><b>$settings['system']</b> - set to 1 if your website is on a server under Linux (most servers are),
+set to 2 if it is under Windows (your SERVER, not your computer!). If you are not
+sure which operating system your server runs under
+try with $settings['system'] set to 1 first or consult your web hosting company.
+If you are under some other OS (not Linux nor Win)
+you can try setting it from 1 to 3 and see if it works<br><br></li>
+<li><b>$settings['apass']</b> - this will be your password for the admin panel. Change it from the
+default password <b>admin</b>. Use only letters a-Z, A-Z and numbers 0-9<br><br></li>
+<li><b>$settings['website_title']</b> - A short title of your website, eg &quot;My lovely website&quot;<br><br></li>
+<li><b>$settings['website_url']</b> - URL of your website. This is the URL your link
+partners will have to place on their website.<br><br></li>
+<li><b>$settings['gbook_title']</b> - Title of your guestbook, eg &quot;My guestbook&quot;<br><br></li>
+<li><b>$settings['smileys']</b> - If set to <b>1</b> text like :), ;) etc will be replaced by smileys (image icons).
+Individual visitors will still be able to disable smileys for their entry. If you don't
+want to allow smileys set to <b>0</b>.<br><br></li>
+<li><b>$settings['notify']</b> - If set to <b>1</b> you will receive an e-mail notification
+at your admin e-mail address every time a new entry is added to your guestbook. Set
+to <b>0</b> if you don't want to be notified.<br><br></li>
+<li><b>$settings['admin_email']</b> - Your e-mail address where new entry notifications
+will be sent. Only required if $settings['notify'] is set to 1.<br><br></li>
+<li><b>$settings['gbook_url']</b> - URL of the <b>gbook.php</b> script. For example
+http://www.yourdomain.com/guestbook/gbook.php<br><br></li>
+<li><b>$settings['filter']</b> - If set to <b>1</b> all new posts will be filtered for bad words and replaced
+by ****. Set to <b>0</b> if you don't want to be notified.<br><br></li>
+<li><b>$settings['filter_lang']</b> - The language of bad words file. For now only English language is supported
+so you can only use "en" (CaSe SeNSiTiVe). Please read section &quot;Adding / Translating bad words list&quot; further down for
+info on how to add/translate bad words.<br><br></li>
+<li><b>$settings['autosubmit']</b> - Setting this to 1(recommended) will require entering a &quot;security number&quot; in order to successfully
+submit a new entry to the guestbook. I have added this to prevent SPAMing the guestbook. Set to 0 if you want to disable the security number check.<br><br></li>
+<li><font color="#FF0000">NEW:</font> <b>$settings['filter_sum']</b> - this variable is used in the preventing automated
+submissions and is just a little trick that should make it all even more reliable. The idea is to set this
+to some random sequence of chars and numbers, for example <b>dhjx72js</b>. It doesn't really matter how long it is,
+but you should use only chars (a-zA-Z) and digits (0-9). Don't leave the default value
+(as it would loose the whole point), set it to something of your own. Examples would be
+g3oyf98, p9ak85i, h398dgf and similar. Again, DO NOT USE these examples, just type some chars of your own!<br><br></li>
+<li><b>$settings['one_per_session']</b> - if set to 1 each person will be able to make
+only one post per browser session. As of version 1.33 you can officially disable this by setting this
+variable to 0<br><br></li>
+<li><b>$settings['max_word']</b> - The maximum length of each line of comments.
+This is to prevent long &quot;words&quot; like ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+from stretching your guestbook.<br><br></li>
+<li><b>$settings['logfile']</b> - File where all the data (entries) will be stored
+(advanced users only).
+You may leave this as it is.<br><br></li>
+</ul>
+
+<p>Save and close the settings.php file.</p>
+
+<p>Go to your FTP client and FTP to the public
+directory on your server (where the rest
+of your website is; usually &quot;public_html&quot;, &quot;www&quot; or &quot;site&quot;)
+and create
+a folder where you will install GBook.<br>
+Example: /public_html/gbook<br>
+Corresponding URL: http://www.yourdomain.com/gbook</p>
+
+<p>Upload all GBook files to this folder. The &quot;images&quot; folder (all files in this folder)
+must be transferred in BINARY mode, other files in ASCII mode (refer to your FTP client
+instructions for details on how to set transfer mode properly).</p>
+
+<p>Make sure that the PHP scripts have permission to write to file entries.txt
+- on UNIX (Linux) servers you must CHMOD (set permissions for) this
+file to 666 (rw-rw-rw).</p>
+
+<p>If you have done all this your guestbook should work now. In your browser open
+your GBook, for example:<br>
+http://www.yourdomain.com/gbook/gbook.php and test it. You can delete messages
+by clicking the red [X] icon and entering your admin password.</p>
+
+<p>You may edit header.txt and footer.txt files to add your own header and footer
+to the links page. You will have to use <b>full image URLs</b> in the code. For example
+instead of &lt;IMG SRC=&quot;images/image.jpg&quot; ... &gt; use
+&lt;IMG SRC=&quot;http://www.yourdomain.com/images/image.jpg&quot; ... &gt;! Same
+goes for any Javascripts or CSS files if you are calling them from within the
+header or footer.</p>
+
+<p>Good luck with the script!</p>
+
+<hr>
+
+<p><a name="translate"></a><b>&gt;&gt; Adding / Translating bad words list</b></p>
+
+<p>As of version 1.2 GBook can search for bad words in the comments and replace them
+with ****. Files with bad words list are stored in folder &quot;badwords&quot; and have two
+letter names. For now only English version is available (named &quot;en.php&quot;).</p>
+
+<p><b>Before adding new words please install GBook and test it so you are sure it works properly!</b></p>
+
+<p>To add new bad words open the en.php file in your favorite <b>PLAIN TEXT</b> editor (like Notepad or
+Wordpad on Windows systems, DO NOT use MS Word or similar editor), find the comment saying
+INSERT NEW BAD WORDS BELOW THIS LINE and add new bad words in this format:<br><br>
+&quot;BADWORD&quot; => &quot;REPLACEMENT&quot;,<br><br>
+For example if &quot;asfhkjhfasf&quot; is a bad word you would add this line to the file:<br><br>
+&quot;asfhkjhfasf&quot; => &quot;a**********&quot;,<br><br>
+Don't forget to add a comma ( , ) after the line!</p>
+
+<p>If you are translating the bad words file I suggest you leave the English words and add new ones in your language as explained
+above. Then save the file as two letter country code php file. For example, if you are translating the file in French, you
+should save the file as <b>fr.php</b> (CaSe SeNSiTiVe!). Upload fr.php to your &quot;badwords&quot; folder,
+go to settings.php again and set <b>$settings['filter_lang']</b> to <b>&quot;fr&quot;</b> (file name without .php).</p>
+
+<p>Now test the GBook again. If you get an Error or Warning when you try to post a new message this means
+something is wrong with your language file. It either can't be found (check the name of the file, on most servers
+names are CaSe SeNsiTiVe!) or something is wrong with PHP syntax in it (make sure all the words are added in<br>
+<b>&quot;BADWORD&quot; => &quot;REPLACEMENT&quot;,</b> syntax).</p>
+
+<p><b>Please send me the translated file</b>. If you translate the bad words file to your language please send it
+to info AT phpjunkyard DOT com (or contact me through PHPJunkard.com contact form) and I will make it available
+to others for download. You may include your name, website URL and e-mail address and I will give you proper credit
+(translated by John Doe. Visit www.yourwebsite.com).</p>
+
+<hr>
+
+<p><a name="copy"></a><b>&gt;&gt; Troubleshooting</b></p>
+
+<p><b>What is CHMOD and FTP?</b></p>
+
+<p>I have prepared a simple <a href="http://www.phpjunkyard.com/ftp-chmod-tutorial.php" target="_blank">
+FTP and CHMOD tutorial</a> which will help you FTP files to your server and
+set correct CHMOD settings.</p>
+
+<p><b>My guestbook doesn't work, HELP!</b></p>
+
+<p>Here are a few things to check:</p>
+<ol>
+<li>did you upload the images folder in BINARY mode and all other files ASCII mode?</li>
+<li>is entries.txt file world writable? CHMOD it to 666 (rw-rw-rw) if you are on a UNIX server</li>
+<li>if images don't display correctly check if you uploaded them (the entire &quot;images&quot;
+folder) correctly. The images folder must be place within the guestbook folder, for example
+http://www.yourdomain.com/guestbook/images</li>
+<li>go through the entire setup process again carefully</li>
+</ol>
+
+<p>Since these scripts are free no support is guaranteed. If you can't get the script to work please go
+through this readme file again carefully and repeat the installation step-by-step (also delete old
+files and folders from the server). Also please feel free to post any questions or problems you might have
+in <a href="http://developers.phpjunkyard.com">PHPJunkyard forum</a>!</p>
+
+<hr>
+
+<p><a name="other"></a><b>&gt;&gt; Copyright removal</b></p>
+
+<p>You may NOT edit or remove any copyright or Powered by statements in Gbook code
+without purchasing a license! For more information please visit<br>
+<a href="http://www.phpjunkyard.com/copyright-removal.php">http://www.phpjunkyard.com/copyright-removal.php</a></p>
+
+<hr>
+
+<p><b>&gt;&gt; Stay updated!</b></p>
+
+<p>Join my FREE newsletter and you will be notified about new scripts, new versions of the existing scripts
+and other important news from PHPJunkYard.<br>
+<a href="http://www.phpjunkyard.com/newsletter.php">Click here for more info</a></p>
+
+<hr>
+
+<p><b>&gt;&gt; Please rate this script</b></p>
+
+<p>If you like this script please rate it or even write a review at:</p>
+<p><a href="http://www.hotscripts.com/Detailed/37192.html" target="_new">Rate
+this Script @ Hot Scripts</a></p>
+
+<hr>
+
+<p><b>&gt;&gt; What else?</b></p>
+
+<p>That's it! If you use PHPJunkYard free scripts or any portion of their code  please place a link
+to PHPJunkYard.com on your website. I won't sue you if you don't, but
+I believe it is a fair trade for a free script/code. Think about it. You can
+find link suggestions <a href="http://www.phpjunkyard.com/link2us.php">here</a>.</p>
+
+<p><b>Best regards,<br><br>
+Klemen Stirn<br>
+PHP JunkYard<br>
+<a href="http://www.phpjunkyard.com">http://www.PHPJunkYard.com</a></b></p>
+
+<p>&nbsp;</p>
+
+</body>
+</html>
